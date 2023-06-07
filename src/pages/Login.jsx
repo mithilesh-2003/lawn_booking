@@ -8,7 +8,7 @@ function Login() {
     try {
       console.log('apple');
       const res = await axios.post(
-        'http://localhost:5000/users/login',
+        'https://long-shorts-worm.cyclic.app/users/login',
         details,
       );
       console.log(res);

@@ -9,7 +9,7 @@ function Signup() {
     event.preventDefault();
     try {
       const res = await axios.post(
-        'http://localhost:5000/users/signup',
+        'https://long-shorts-worm.cyclic.app/users/signup',
         details,
         {
           headers: {
