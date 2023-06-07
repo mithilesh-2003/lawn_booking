@@ -7,6 +7,7 @@ import Booking from './pages/Booking';
 import MarrigeLawn from './components/MarrigeLawn';
 import Contact from './components/Contact';
 import Admin from './pages/Admin';
+// import Footer from './pages/footer';
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
       <Route path='/Admin' element= {<Admin/>}/>
       <Route path='/Contact' element= {<Contact/>}/>
     </Routes>
+      {/* <Footer/> */}
   </>
   )
 }

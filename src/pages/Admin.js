@@ -8,7 +8,7 @@ function Admin() {
     try {
       console.log('apple');
       const res = await axios.post(
-        'http://localhost:8080/emploies/login',
+        'http://localhost:5000/emploies/login',
         details,
       );
       console.log(res);
