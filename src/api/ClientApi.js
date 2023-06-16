@@ -50,7 +50,7 @@ const adminSetAuthHeader = () => {
 };
 
 const userLogin = (payload) => {
-  return apiClient.post('/user/login', payload);
+  return apiClient.post('/users/login', payload);
 };
 const bookLawn = (payload) => {
   return apiClient.post('/bookings', payload);
@@ -58,8 +58,8 @@ const bookLawn = (payload) => {
 const adminLogin = (payload) => {
   return apiClient.post('/emploies/login', payload);
 };
-const userSignp = (payload) => {
-  return apiClient.post('/users/signup', payload);
+const userSignUp = (payload) => {
+  return apiClient.post('/users/signUp', payload);
 };
 
 export default {
@@ -68,5 +68,5 @@ export default {
   bookLawn,
   adminSetAuthHeader,
   adminLogin,
-  userSignp,
+  userSignUp,
 };

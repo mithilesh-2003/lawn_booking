@@ -56,7 +56,7 @@ function Header() {
                     to="/signup"
                     className="hover:text-blue-600 font-semibold font-serif"
                   >
-                    Signup
+                    SignUp
                   </Link>
                 </>
               ) : (
@@ -138,7 +138,7 @@ function Header() {
                           to="/signup"
                           className="hover:text-blue-600 font-semibold font-serif"
                         >
-                          Signup
+                          SignUp
                         </Link>
                       </>
                     ) : (

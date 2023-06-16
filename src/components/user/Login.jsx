@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { setCookie } from '../../utils/manageCookies';
+import ClientApi from '../../api/ClientApi';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [details, setDetails] = useState({});
+
+  const navigate = useNavigate()
+
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -12,6 +18,10 @@ function Login() {
         details,
       );
       console.log(res);
+      setCookie('token', res.data.token);
+      ClientApi.setAuthHeader();
+      console.log("navigating.....")
+      navigate('/booking')
     } catch (error) {
       console.log(error);
     }

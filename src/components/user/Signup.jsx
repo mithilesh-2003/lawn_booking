@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 
-function Signup() {
+function SignUp() {
     const [details, setDetails] = useState({});
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -127,4 +127,4 @@ function Signup() {
   )
 }
 
-export default Signup
+export default SignUp

@@ -2,11 +2,10 @@ import axios from 'axios';
 import React, { createContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Tree from '../user/Tree/index';
-import { getCookie } from '../../utils/manageCookies';
+import { deleteCookie, getCookie } from '../../utils/manageCookies';
 import ClientApi from '../../api/ClientApi';
 
 export const Context = createContext();
-
 function assetsChildAdder(assets, c) {
   return assets
     .filter((cat0) => c.id === cat0.cid)
@@ -23,22 +22,27 @@ function assetsChildAdder(assets, c) {
 
 function Booking() {
   const [items, setItems] = useState([]);
+
   const [categories, setCategories] = useState([]);
   const [date, setDate] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
     const userToken = getCookie('token');
-    console.log(userToken);
+
     if (!userToken) {
       navigate('/users/login');
-    };
-  },[]);
+    }
+  }, []);
 
   const handleDashboard = async () => {
     try {
-      const categoryRes = await axios.get('https://long-shorts-worm.cyclic.app/categories');
-      const assetRes = await axios.get('https://long-shorts-worm.cyclic.app/assets');
+      const categoryRes = await axios.get(
+        ' https://long-shorts-worm.cyclic.app/categories'
+      );
+      const assetRes = await axios.get(
+        'https://long-shorts-worm.cyclic.app/assets'
+      );
       console.log(categoryRes);
       console.log(assetRes);
 
@@ -77,7 +81,7 @@ function Booking() {
     const userToken = getCookie('token');
     console.log(userToken);
     if (!userToken) {
-      navigate('/users/login');
+      navigate('/login');
     }
   }, []);
 
@@ -97,6 +101,7 @@ function Booking() {
       const det = { date: d, items };
       const res = await ClientApi.bookLawn(det);
       console.log(res);
+      alert('booking succesfully');
       setItems([]);
       setDate('');
     } catch (error) {
@@ -104,6 +109,8 @@ function Booking() {
       alert(error?.response?.data?.message);
     }
   };
+
+
   return (
     <>
       <Context.Provider value={{ items, setItems }}>

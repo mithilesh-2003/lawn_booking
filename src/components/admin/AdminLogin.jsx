@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import ClientApi from '../../api/ClientApi';
 import { getCookie,setCookie } from '../../utils/manageCookies';
 
-function LoginPages() {
+function AdminLogin() {
   const [details, setDetails] = useState({});
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
@@ -103,4 +103,4 @@ function LoginPages() {
   );
 }
 
-export default LoginPages;
+export default AdminLogin;
